@@ -248,9 +248,10 @@
               <span class="author-block">
                 <a href="https://scholar.google.co.jp/citations?user=jtB7J0AAAAAJ&hl=ja&oi=ao" target="_blank">Akira Taniguchi</a><sup>1</sup>,</span>
               <span class="author-block">
-                <a href="https://scholar.google.co.jp/citations?user=tsm7qaQAAAAJ&hl=ja&oi=ao" target="_blank">Lotfi El Hafi</a><sup>1</sup>, and</span>
+                <a href="https://scholar.google.co.jp/citations?user=tsm7qaQAAAAJ&hl=ja&oi=ao" target="_blank">Lotfi El Hafi</a><sup>1</sup>,</span>
+              <br>
               <span class="author-block">
-                <a href="https://scholar.google.co.lp/citations?user=IKkMDxEAAAAJ&hl=ja&oi=ao" target="_blank">Gustavo Alfonso Garcia Ricardez</a><sup>1</sup>,</span>
+                <a href="https://scholar.google.co.lp/citations?user=IKkMDxEAAAAJ&hl=ja&oi=ao" target="_blank">Gustavo Alfonso Garcia Ricardez</a><sup>1</sup>, and</span>
               <span class="author-block">
                 <a href="https://scholar.google.co.jp/citations?user=dPOCLQEAAAAJ&hl=ja&oi=ao" target="_blank">Tadahiro Taniguchi</a><sup>2,1</sup></span>
               </span>
@@ -262,7 +263,7 @@
                       <sup>1</sup>Ritsumeikan Univ.
                       <sup>2</sup>Kyoto Univ.
                       <br>
-                      <span class="publication-title">Under Review</span>
+                      <span class="publication-title">IEEE RO-MAN (Under Review)</span>
                     </span>
                     <!-- TODO: Remove this line if no equal contribution -->
                     <span class="eql-cntrb"><small><br><sup>*</sup></small>Corresponding Author</span>
@@ -348,19 +349,14 @@
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
           <p>
-            Daily life instructions often include contextual cues related not to the object itself, but to its surrounding environment (e.g., objects placed around the target). 
-            Therefore, it is essential for service robots to interpret such surrounding information and translate it into action plans. 
-            Recently, there has been growing interest in using large language models (LLMs) to generate actions from instructions. 
-            Among these approaches, some studies explored leveraging semantic maps to better handle environmental context. 
-            However, previous studies face two limitations: 1) semantic maps are limited to object-level data, such as object class and position, and 2) since LLMs refer to semantic maps based on object classes, they cannot utilize the surrounding context, leading to misidentifications. 
-            To address them, we propose an action planning method that integrates the spatial concept model with LLMs. 
-            The spatial concept model categorizes observations and learns the parameters of probabilistic distributions. 
-            It then infers place names and object arrangements using Bayesian inference. 
-            By leveraging inference results as prompts, our method enables context-aware action planning. 
-            In the simulation, we designed object-search tasks using an open vocabulary within a household scenario in Gazebo. 
-            The robot received two types of instructions: 1) instructions that specify the target and its surrounding items, and 2) instructions that specify the target and its location. 
-            Our method achieved a success rate of over 0.8, outperforming baselines. 
-            On the other hand, real-world experiments revealed challenges in providing feedback when manipulation or detection failed.
+            Multi-robot coordination based on large language models (LLMs) has attracted growing attention, since LLMs enable the direct translation of natural language instructions into robot action plans by decomposing tasks and generating high-level plans.
+            However, recovering from physical execution failures remains difficult, and tasks often stagnate due to the repetition of the same unsuccessful actions.
+            While frameworks for remote robot operation using Mixed Reality were proposed, there have been few attempts to implement remote error resolution specifically for physical failures in multi-robot environments.
+            In this study, we propose REPAIR (Robot Execution with Planned And Interactive Recovery), a human-in-the-loop framework that integrates remote error resolution into LLM-based multi-robot planning. 
+            In this method, robots execute tasks autonomously; however, when an irrecoverable failure occurs, the LLM requests assistance from an operator, enabling task continuity through remote intervention.
+            Evaluations using a multi-robot trash collection task in a real-world environment confirmed that REPAIR significantly improves task progress (the number of items cleared within a time limit) compared to fully autonomous methods. 
+            Furthermore, for easily collectable items, it achieved task progress equivalent to full remote control. 
+            The results also suggested that the mental workload on the operator may differ in terms of physical demand and effort.
           </p>
         </div>
       </div>
@@ -501,13 +497,11 @@
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@article{hasegawa2025spcorap,
-  title={{Spatial Concepts-Based Prompts With Large Language Models for Robot Action Planning}},
-  author={Hasegawa, Shoichi and Hagiwara, Yoshinobu and Taniguchi, Akira and El Hafi, Lotfi and Taniguchi, Tadahiro},
-  journal={{IEEE Access}},
-  volume={13},
-  pages={216937--216955},
-  year={2025}
+      <pre id="bibtex-code"><code>@inproceedings{hasegawa2026repair,
+  title={{Reducing Mental Workload through On-Demand Human Assistance for Physical Action Failures in LLM-based Multi-Robot Coordination}},
+  author={Hasegawa, Shoichi and Taniguchi, Akira and El Hafi, Lotfi and Garcia Ricardez, Gustavo Alfonso and Taniguchi, Tadahiro},
+  booktitle={{IEEE International Conference on Robot and Human Interactive Communication (RO-MAN)}},
+  year={2026, under review}
 }</code></pre>
     </div>
 </section>
