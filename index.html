@@ -21,7 +21,7 @@
   <!-- TODO: Replace with your institution or lab name -->
   <meta property="og:site_name" content="Emergent Systems Laboratory">
   <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="Reducing Mental Workload through On-Demand Human Assistance for Physical Action Failures in LLM-based Multi-Robot Coordination">
+  <meta property="og:title" content="On-Demand Human Assistance for Task Continuation under Physical Action Failures in LLM-based Planning">
   <!-- TODO: Same as description above -->
   <meta property="og:description" content="">
   <!-- TODO: Replace with your actual website URL -->
@@ -30,7 +30,7 @@
   <meta property="og:image" content="">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="SpCoRAP">
+  <meta property="og:image:alt" content="REPAIR">
   <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
   <meta property="article:author" content="Shoichi Hasegawa">
   <meta property="article:section" content="Research">
@@ -44,7 +44,7 @@
   <!-- TODO: Replace with first author's Twitter handle -->
   <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
   <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="Reducing Mental Workload through On-Demand Human Assistance for Physical Action Failures in LLM-based Multi-Robot Coordination">
+  <meta name="twitter:title" content="On-Demand Human Assistance for Task Continuation under Physical Action Failures in LLM-based Planning">
   <!-- TODO: Same as description above -->
   <meta name="twitter:description" content="">
   <!-- TODO: Same as social preview image above -->
@@ -52,7 +52,7 @@
   <meta name="twitter:image:alt" content="REPAIR">
 
   <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="Reducing Mental Workload through On-Demand Human Assistance for Physical Action Failures in LLM-based Multi-Robot Coordination">
+  <meta name="citation_title" content="On-Demand Human Assistance for Task Continuation under Physical Action Failures in LLM-based Planning">
   <meta name="citation_author" content="Hasegawa, Shoichi">
   <meta name="citation_publication_date" content="">
   <meta name="citation_conference_title" content="">
@@ -248,7 +248,7 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Reducing Mental Workload through On-Demand Human Assistance for Physical Action Failures in LLM-based Multi-Robot Coordination</h1>
+            <h1 class="title is-1 publication-title">On-Demand Human Assistance for Task Continuation under Physical Action Failures in LLM-based Planning</h1>
             <div class="is-size-5 publication-authors">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
@@ -271,7 +271,7 @@
                       <sup>1</sup>Ritsumeikan Univ.
                       <sup>2</sup>Kyoto Univ.
                       <br>
-                      <span class="publication-title">IEEE RO-MAN 2026 (Under Review)</span>
+                      <span class="publication-title">Under Review</span>
                     </span>
                     <!-- TODO: Remove this line if no equal contribution -->
                     <span class="eql-cntrb"><small><br><sup>*</sup></small>Corresponding Author</span>
@@ -280,15 +280,15 @@
                   <div class="column has-text-centered">
                     <div class="publication-links">
                          <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
+                      <!-- <span class="link-block">
                         <a href="https://arxiv.org/abs/2603.28156" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
                         </span>
                         <span>Paper (preprint)</span>
-                      </a>
-                    </span>
+                        </a>
+                      </span> -->
 
                     <!-- TODO: Add your supplementary material PDF or remove this section -->
                     <!-- <span class="link-block">
@@ -309,8 +309,8 @@
                       <i class="fab fa-github"></i>
                     </span>
                     <span>Code (prompt)</span>
-                  </a>
-                </span>
+                    </a>
+                  </span>
 
                 <!-- TODO: Update with your arXiv paper ID -->
                 <!-- <span class="link-block">
@@ -357,14 +357,15 @@
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
           <p>
-            Multi-robot coordination based on large language models (LLMs) has attracted growing attention, since LLMs enable the direct translation of natural language instructions into robot action plans by decomposing tasks and generating high-level plans.
-            However, recovering from physical execution failures remains difficult, and tasks often stagnate due to the repetition of the same unsuccessful actions.
-            While frameworks for remote robot operation using Mixed Reality were proposed, there have been few attempts to implement remote error resolution specifically for physical failures in multi-robot environments.
-            In this study, we propose REPAIR (Robot Execution with Planned And Interactive Recovery), a human-in-the-loop framework that integrates remote error resolution into LLM-based multi-robot planning. 
-            In this method, robots execute tasks autonomously; however, when an irrecoverable failure occurs, the LLM requests assistance from an operator, enabling task continuity through remote intervention.
-            Evaluations using a multi-robot trash collection task in a real-world environment confirmed that REPAIR significantly improves task progress (the number of items cleared within a time limit) compared to fully autonomous methods. 
-            Furthermore, for easily collectable items, it achieved task progress equivalent to full remote control. 
-            The results also suggested that the mental workload on the operator may differ in terms of physical demand and effort.
+            While robot action planning based on large language models (LLMs) has advanced remarkably, continuing a task after a physical action failure during execution remains a key challenge.
+            For example, after failing to grasp an object, the robot may not notice that it has fallen off the table and keep trying to detect and pick it up, stalling the task.
+            Existing approaches either rely on closed-loop autonomous re-planning, which fails when errors exceed the robot's capabilities, or on human intervention without updating the LLM's plan, hindering subsequent planning.
+            We present a system for LLM-based robot action planning that integrates remote human intervention with feedback-based replanning.
+            When the LLM detects an action failure, the robot requests remote assistance; an operator resolves the failure through teleoperation and reports the outcome in natural language, which is fed back to the LLM to update its plan so that the task can continue.
+            We evaluated the proposed system on a real-world trash-collection task, comparing it with a fully autonomous method and a teleoperation-only baseline.
+            The proposed system improves task progress over the autonomous method in this case study.
+            For easy-to-retrieve trash, the gap from the teleoperation reference was small, while a larger gap remained for harder-to-retrieve trash.
+            These results suggest that, in this case study, combining remote human intervention with feedback-based replanning was associated with continued task execution even in the face of otherwise unrecoverable failures.
           </p>
         </div>
       </div>
@@ -381,21 +382,19 @@
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- TODO: Replace with your research result images -->
-        <img src="static/images/abstract_v2.svg" alt="First research result visualization" loading="lazy"/>
+        <img src="static/images/abstract_v5.svg" alt="First research result visualization" loading="lazy"/>
         <!-- TODO: Replace with description of this result -->
         <h2 class="subtitle has-text-left">
-          An overview of our study. 
-          As multiple robots act based on planning generated by an LLM, they may fall into a loop state due to action failures.
-          In such cases, the robots request assistance from an operator as needed, and the issue is resolved through remote error resolution.
+          An overview of our study. When a robot drops an object and subsequently fails to detect it, it falls into a loop state. In such cases, the robot requests assistance from an operator on demand, and the issue is resolved through remote error resolution.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/proposed_method_v2.svg" alt="Second research result visualization" loading="lazy"/>
+        <img src="static/images/proposed_method_v5.svg" alt="Second research result visualization" loading="lazy"/>
         <h2 class="subtitle has-text-left">
-          An overview of REPAIR. (a) The LLM takes a user’s instruction, decomposes it based on robot capabilities and rules, and assigns tasks to each robot. 
-          (b) It then generates executable actions, which the robots perform; when failures occur, they request operator assistance. 
-          (c) The operator resolves the issue remotely and provides feedback, allowing the LLM to update its understanding and resume execution.
+          An overview of the proposed system.
+          The LLM takes a user's instruction, decomposes it based on robot capabilities and rules, and assigns tasks to each robot. After that,  LLMs generate executable actions, which the robots perform.
+          When failures occur, a robot requests operator assistance. The operator resolves the issue remotely and provides feedback, allowing the LLM to update its understanding and resume execution.
         </h2>
       </div>
       <!-- <div class="item">
@@ -510,9 +509,9 @@
         </button>
       </div>
       <pre id="bibtex-code"><code>@inproceedings{hasegawa2026repair,
-  title={{Reducing Mental Workload through On-Demand Human Assistance for Physical Action Failures in LLM-based Multi-Robot Coordination}},
+  title={{On-Demand Human Assistance for Task Continuation under Physical Action Failures in LLM-based Planning}},
   author={Hasegawa, Shoichi and Taniguchi, Akira and El Hafi, Lotfi and Garcia Ricardez, Gustavo Alfonso and Taniguchi, Tadahiro},
-  booktitle={{IEEE International Conference on Robot and Human Interactive Communication (RO-MAN)}},
+  booktitle={{Under Review}},
   year={2026, under review}
 }</code></pre>
     </div>
